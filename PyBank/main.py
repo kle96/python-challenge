@@ -50,6 +50,7 @@ avg_txt = f"Average Change: ${round(avg_change/len(chng_income),2)}"
 g_txt = f"Greatest increase: {chng_income[g_r][0]} (${chng_income[g_r][1]})"
 d_txt = f"Greatest decrease: {chng_income[g_d_r][0]} (${chng_income[g_d_r][1]})"
 
+print(f"{totmo_text}\n{tot_text}\n{avg_txt}\n{g_txt}\n{d_txt}")
 # Save results into a text file
 with open("./Analysis/results.txt", "w") as file:
     # \n creates a new line
