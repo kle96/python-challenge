@@ -43,8 +43,16 @@ for r in range(1, len(chng_income)):
     elif chng_income[r][1] < chng_income[g_d_r][1]:
         g_d_r = r
 
-print(f"Total Months: {total_month}")
-print(f"Total: ${net_income}")
-print(f"Average Change: ${avg_change/len(chng_income)}")
-print(f"Greatest increase: {chng_income[g_r][0]} (${chng_income[g_r][1]})")
-print(f"Greatest decrease: {chng_income[g_d_r][0]} (${chng_income[g_d_r][1]})")
+# Create variables to hold the strings we are going to be printing in the text file
+totmo_text = f"Total Months: {total_month}"
+tot_text = f"Total: ${net_income}"
+avg_txt = f"Average Change: ${round(avg_change/len(chng_income),2)}"
+g_txt = f"Greatest increase: {chng_income[g_r][0]} (${chng_income[g_r][1]})"
+d_txt = f"Greatest decrease: {chng_income[g_d_r][0]} (${chng_income[g_d_r][1]})"
+
+# Save results into a text file
+with open("./Analysis/results.txt", "w") as file:
+    # \n creates a new line
+    writer = f"{totmo_text}\n{tot_text}\n{avg_txt}\n{g_txt}\n{d_txt}"
+    file.write(writer)
+    file.close()
