@@ -21,8 +21,6 @@ with open(output_path) as csvfile:
     sum_change = 0 # this is used to calculate the total change in income for calculating the average
     avg_chng_income = 0
 
-    g_incr = []
-    g_decr = []
     for row in csvreader:
         total_month += 1
         net_income += int(row[1])
